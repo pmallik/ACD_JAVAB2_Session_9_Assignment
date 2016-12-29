@@ -1,0 +1,24 @@
+import java.util.*;
+public class HashMapDemo {
+      
+    
+     public static void main(String args[]){  
+       
+      HashMap<Integer,String> hm=new HashMap<Integer,String>();  
+      
+      hm.put(100,"Rekha");  
+      hm.put(101,"Puja");  
+      hm.put(102,"Sonali");  
+      
+      for(Map.Entry m:hm.entrySet()){  
+       System.out.println("Employee Name: " +m.getValue());  
+      }  
+     }  
+    }  
+
+///////////////////////////////////////////////////////////////////////////////////
+Output
+
+Employee Name: Rekha
+Employee Name: Puja
+Employee Name: Sonali

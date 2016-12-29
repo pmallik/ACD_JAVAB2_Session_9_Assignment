@@ -1,0 +1,76 @@
+// declaring comparable HDTV which implements comparable inteface
+
+public class HDTV implements Comparable<HDTV>{
+	 
+        int size;  
+        String brandname;  
+         
+     public   HDTV(int size,String brandname){ 
+    	 super();
+         this.size=size;  
+         this.brandname=brandname;  
+          
+        }
+     public String getBrandName() {
+ 		return brandname;
+ 	}
+ 	public void setBrandName(String BrandName) {
+ 		this.brandname = brandname;
+ 	}
+ 	
+ 	public int getSize() {
+ 		return size;
+ 	}
+ 	public void setSize(int size) {
+ 		this.size = size;
+ 	}
+
+ 
+}
+//////////////////////////////////////////////////////////////////////////////////////////////
+import java.util.*;  
+
+    
+public class TestHDTV implements Comparator<HDTV>{
+	 // implementing comparator interface compare method
+    @Override
+    public int compare(HDTV e1, HDTV e2) {
+        if(e1.getSize() > e2.getSize()){
+            return 1;
+        } else {
+            return -1;
+        }
+    }    	    
+    	      
+     public static void main(String args[]){  
+      //Creating user-defined class objects  
+     
+     
+    	 List<HDTV> list = new ArrayList<HDTV>();
+         list.add(new HDTV(40,"Sony"));
+         list.add(new HDTV(32,"Samsung"));
+         list.add(new HDTV(60,"GE"));
+         
+         // calling collection sort method
+         
+         Collections.sort(list,new TestHDTV());
+         System.out.println("Sorted list entries: ");
+         for(HDTV e:list){
+             System.out.println(e.brandname + "  " + e.size);
+ 
+		} 
+    	
+      }  
+         
+     }  
+
+///////////////////////////////////////////////////////////////////////////
+Output
+Sorted list entries: 
+Samsung  32
+Sony  40
+GE  60
+      
+
+
+	
